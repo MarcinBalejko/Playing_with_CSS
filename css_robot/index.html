@@ -1,17 +1,45 @@
-
 <!DOCTYPE html>
+
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Poller+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
+<script src="/assets/jquery.js"></script>
 </head>
+
 <body>
-    <div class="robot">
-        <div class="beep"></div>
-        <div class="brain"></div>
-        <div class="torso">
-            <div class="left">j</div>
-            <div class="right">j</div>
-        </div>
-        <div class="foot"></div>
-    </div>
+
+<div class="robot">
+  <div class="beep"></div>
+  <div class="brain"></div>
+  <div class="torso">
+    <div class="left">j</div>
+    <div class="right">j</div>
+  </div>
+  <div class="foot"></div>
+</div>
+
+<button class="flash">laser eyes on/off</button>
+<button class="color">change color!</button>
+
+<script>
+// When eyes button is clicked, toggle laser class on brain
+$(".flash").click(function() {
+  $(".brain").toggleClass('laser');
+});
+// When color button is clicked...
+$(".color").click(function() {
+  // assign each named color a random number 0-255
+  var red = Math.floor(Math.random() * 255);
+  var green = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+  
+  // Generate an RGBA value from red, green and blue
+  var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
+  
+  // and change the body's background to our random color
+  $("body").css("background", randomRGBA);
+  
+  });
+  
+</script>
 </body>

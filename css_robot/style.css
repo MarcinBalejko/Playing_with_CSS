@@ -1,20 +1,16 @@
-
 .robot {
   position: relative;
   left: 200px;
 }
-
-.beep{  
+.beep {
   width: 5px;
-  height: 0px;
+  height: 0;
   border: 5px solid transparent;
   border-top: 10px solid #777;
   border-bottom: 80px solid #888;
   position: relative;
   left: 140px;
 }
-
-
 @keyframes blink {
   50% {
     background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
@@ -30,12 +26,12 @@
     background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
   }
 }
-
-
-.brain {
+.laser {
   animation: blink .5s infinite;
   -webkit-animation: blink .5s infinite;
   -moz-animation: blink .5s infinite;
+}
+.brain {
   background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
   background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5; 
   background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
@@ -55,7 +51,6 @@
   border-right: 75px solid transparent;
   border-radius: 20px 20px 100px 100px;
 }
-
 .left {
   font-family: 'Poller One', verdana, arial, sans-serif;
   font-weight: bold;
@@ -65,11 +60,10 @@
   -webkit-transform: rotate(200deg);
   -moz-transform: rotate(200deg);
   position: relative;
-  left: -190px;
   top: -320px;
+  left: -190px;
   z-index: -1;
 }
-
 .right {
   font-family: 'Poller One', verdana, arial, sans-serif;
   font-weight: bold;
@@ -79,11 +73,10 @@
   -webkit-transform: scaleY(-1) rotate(20deg);
   -moz-transform: scaleY(-1) rotate(20deg);
   position: relative;
-  left: 190px;
   top: -620px;
+  left: 190px;
   z-index: -1;
 }
-
 .foot {
   height: 40px;
   width: 40px;
@@ -91,8 +84,22 @@
   border-radius: 40px;
   border: 15px solid #999;
   position: relative;
-  top: -10px;
   left: 110px;
+  top: -10px;
   z-index: -1;
-  
+}
+@keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+@-webkit-keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+@-moz-keyframes dance {
+  from {
+    left: 800px;
+  }
 }
