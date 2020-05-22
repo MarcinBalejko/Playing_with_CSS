@@ -80,7 +80,7 @@ body {
 
 #page-1 p {
   transform: translateX(-1800px);
-  animation: text var(--animate-speed) forwards ease-in 1s;
+  animation: text var(--animate-speed) forwards ease-in 1.5s;
 }
 
 /* Keyframes */
