@@ -79,7 +79,7 @@ h1 {
   bottom: 0;
   width: 25px;
   height: 25px;
-  background: var(--secondary-color);
+  background: inherit;
   transform: translateX(-50%);
   border-radius: 50%;
   transition: background 0.5s ease-in-out;
@@ -114,6 +114,10 @@ h1 {
   transform: none;
   visibility: visible;
   opacity: 1;
+}
+
+#timeline ul li.show:after {
+  background: var(--secondary-color);
 }
 
 @media (max-width: 900px) {
