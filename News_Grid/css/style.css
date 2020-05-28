@@ -173,6 +173,10 @@ h6 {
   padding: 3rem 0;
 }
 
+.l-heading {
+  font-size: 3rem;
+}
+
 .list li {
   padding: 0.5rem 0;
   border-bottom: #555 dotted 1px;
@@ -291,7 +295,7 @@ h6 {
 #home-articles .articles-container > *:first-child,
 #home-articles .articles-container > *:last-child {
   /* > *:first-child  = this targets whatever the first child is */
-  /* so in this case first article... */
+  /* so in this case first article (card)... */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
@@ -301,6 +305,18 @@ h6 {
 
 #home-articles .articles-container > *:last-child {
   grid-column: 2 / span 2;
+}
+
+#article .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 0.5rem;
+}
+
+#article .meta .category {
+  margin-top: 0.4rem;
 }
 
 /* Footer */
