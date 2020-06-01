@@ -28,6 +28,22 @@ a[class^="btn-"]:hover,
 input[class^="btn-"]:hover {
   background-color: #ffbc00; }
 
+.bg-main {
+  background: #ffbc00;
+  color: set-text-color(#ffbc00); }
+
+.bg-dark {
+  background: #333;
+  color: set-text-color(#333); }
+
+.bg-light {
+  background: #f4f4f4;
+  color: set-text-color(#f4f4f4); }
+
+.bg-medium {
+  background: #ccc;
+  color: set-text-color(#ccc); }
+
 .lead {
   font-size: 1.3rem;
   margin-bottom: 2rem; }
@@ -58,6 +74,21 @@ input[class^="btn-"]:hover {
 
 .my-4 {
   margin: 4rem 0; }
+
+.section-title {
+  font-size: 2rem;
+  display: block;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 100;
+  text-transform: uppercase; }
+
+.bottom-line {
+  height: 2px;
+  width: 3rem;
+  background: #ffbc00;
+  display: block;
+  margin: 0 auto 1rem auto; }
 
 * {
   margin: 0;
@@ -120,6 +151,11 @@ img {
       font-size: 4rem;
       line-height: 1.2; }
 
+#header-inner {
+  background: url("../img/showcase.jpg") no-repeat 20% 30%/cover;
+  height: 5.5rem;
+  border-bottom: 3px solid #ffbc00; }
+
 #home-a .specials {
   margin-top: 3rem;
   display: grid;
@@ -132,18 +168,54 @@ img {
 #home-b .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr); }
+  #home-b .stats li {
+    line-height: 2; }
+    #home-b .stats li.stats-title {
+      font-size: 1.5rem; }
+    #home-b .stats li.stats-number {
+      font-size: 2rem;
+      font-weight: bold; }
+  #home-b .stats div {
+    padding: 3rem 0; }
+    #home-b .stats div:nth-child(odd) {
+      background: #f4f4f4; }
+    #home-b .stats div:nth-child(even) {
+      background: #ccc; }
 
-#home-b li {
-  line-height: 2; }
-  #home-b li.stats-title {
-    font-size: 1.5rem; }
-  #home-b li.stats-number {
-    font-size: 2rem;
-    font-weight: bold; }
-
-#home-b div {
-  padding: 3rem 0; }
-  #home-b div:nth-child(odd) {
-    background: #f4f4f4; }
-  #home-b div:nth-child(even) {
-    background: #ccc; }
+#home-c .process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  text-align: center; }
+  #home-c .process-step {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 28px;
+    background: #ffbc00;
+    color: set-text-color(#ffbc00);
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    line-height: 15px;
+    padding: 1rem;
+    transition: all 1s; }
+  #home-c .process-icon {
+    border-radius: 50%;
+    background: #333;
+    color: set-text-color(#333);
+    padding: 2rem;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    position: relative;
+    transition: all 1s; }
+    #home-c .process-icon:hover {
+      background: #ffbc00;
+      width: 90px;
+      height: 90px;
+      line-height: 90px; }
+      #home-c .process-icon:hover .process-step {
+        background: #333;
+        color: set-text-color(#333); }
