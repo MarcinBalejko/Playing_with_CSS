@@ -30,19 +30,19 @@ input[class^="btn-"]:hover {
 
 .bg-main {
   background: #ffbc00;
-  color: set-text-color(#ffbc00); }
+  color: #fff; }
 
 .bg-dark {
   background: #333;
-  color: set-text-color(#333); }
+  color: #fff; }
 
 .bg-light {
   background: #f4f4f4;
-  color: set-text-color(#f4f4f4); }
+  color: #000; }
 
 .bg-medium {
   background: #ccc;
-  color: set-text-color(#ccc); }
+  color: #000; }
 
 .lead {
   font-size: 1.3rem;
@@ -193,7 +193,7 @@ img {
     right: 0;
     font-size: 28px;
     background: #ffbc00;
-    color: set-text-color(#ffbc00);
+    color: #fff;
     border-radius: 50%;
     height: 15px;
     width: 15px;
@@ -203,7 +203,7 @@ img {
   #home-c .process-icon {
     border-radius: 50%;
     background: #333;
-    color: set-text-color(#333);
+    color: #fff;
     padding: 2rem;
     width: 70px;
     height: 70px;
@@ -218,7 +218,7 @@ img {
       line-height: 90px; }
       #home-c .process-icon:hover .process-step {
         background: #333;
-        color: set-text-color(#333); }
+        color: #fff; }
 
 #main-footer {
   background: #333;
@@ -238,3 +238,5 @@ img {
       line-height: 20px;
       text-align: center;
       padding: 0.5rem; }
+      #main-footer .footer-content .social .fab:hover {
+        background: #ffbc00; }
