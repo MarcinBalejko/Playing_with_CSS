@@ -220,16 +220,44 @@ img {
         background: #333;
         color: #fff; }
 
-#main-footer {
+#about-a .about-info {
+  display: grid;
+  grid-template-areas: "bioimage bio bio" "aw1 aw2 aw3";
+  grid-gap: 1.2rem; }
+
+#about-a .bio-image {
+  grid-area: bioimage; }
+
+#about-a .bio {
+  grid-area: bio;
+  border-left: 3px solid #ffbc00;
+  padding: 0.8rem; }
+
+#about-a .award-1 {
+  grid-area: aw1; }
+
+#about-a .award-2 {
+  grid-area: aw2; }
+
+#about-a .award-3 {
+  grid-area: aw3; }
+
+#about-a .award-1 .fas,
+#about-a .award-2 .fas,
+#about-a .award-3 .fas {
+  color: #ffbc00;
+  margin: 1rem; }
+
+#about #main-footer {
   background: #333;
   color: #fff;
   height: 5rem; }
-  #main-footer .footer-content {
+  #about #main-footer .footer-content {
     display: flex;
     justify-content: space-between;
     height: 5rem;
     align-items: center; }
-    #main-footer .footer-content .social .fab {
+    #about #main-footer .footer-content .social .fab {
       margin-right: 1rem;
       border: 2px #fff solid;
       border-radius: 50%;
@@ -238,5 +266,5 @@ img {
       line-height: 20px;
       text-align: center;
       padding: 0.5rem; }
-      #main-footer .footer-content .social .fab:hover {
+      #about #main-footer .footer-content .social .fab:hover {
         background: #ffbc00; }

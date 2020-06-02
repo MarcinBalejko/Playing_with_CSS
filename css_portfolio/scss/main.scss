@@ -1,6 +1,5 @@
 @import "config";
 @import "utilities";
-
 // General Styles
 * {
   margin: 0;
@@ -203,30 +202,74 @@ img {
   }
 }
 
-// Footer
-#main-footer {
-  background: $dark-color;
-  color: #fff;
-  height: 5rem;
+// About Sections
+#about {
+  // About A
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        "bioimage bio bio"
+        "aw1 aw2 aw3";
+      grid-gap: 1.2rem;
+    }
 
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
+    // Grid Area
+    .bio-image {
+      grid-area: bioimage;
+    }
+
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $main-color;
+      padding: 0.8rem;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+
+    .award-2 {
+      grid-area: aw2;
+    }
+
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    .award-1 .fas,
+    .award-2 .fas,
+    .award-3 .fas {
+      color: $main-color;
+      margin: 1rem;
+    }
+  }
+
+  // Footer
+  #main-footer {
+    background: $dark-color;
+    color: #fff;
     height: 5rem;
-    align-items: center;
 
-    .social .fab {
-      margin-right: 1rem;
-      border: 2px #fff solid;
-      border-radius: 50%;
-      height: 20px;
-      width: 20px;
-      line-height: 20px;
-      text-align: center;
-      padding: 0.5rem;
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      height: 5rem;
+      align-items: center;
 
-      &:hover {
-        background: $main-color;
+      .social .fab {
+        margin-right: 1rem;
+        border: 2px #fff solid;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+        padding: 0.5rem;
+
+        &:hover {
+          background: $main-color;
+        }
       }
     }
   }
