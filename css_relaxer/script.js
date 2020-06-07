@@ -21,4 +21,5 @@ function breatheAnimation() {
   }, breatheTime);
 }
 
+// ^^^We want to run this every 7.5 seconds
 setInterval(breatheAnimation, totalTime);
