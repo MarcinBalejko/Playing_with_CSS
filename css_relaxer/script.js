@@ -1,14 +1,14 @@
-const container = document.querySelector(".container");
+const container = document.getElementById("container");
 const text = document.querySelector("#text");
 
 const totalTime = 7500;
 const breatheTime = (totalTime / 5) * 2;
 const holdTime = totalTime / 5;
 
-breatheAnimation();
+breathAnimation();
 
-function breatheAnimation() {
-  text.innerHtml = "Breath In!";
+function breathAnimation() {
+  text.innerText = "Breathe In!";
   container.className = "container grow";
 
   setTimeout(() => {
@@ -21,5 +21,4 @@ function breatheAnimation() {
   }, breatheTime);
 }
 
-// ^^^We want to run this every 7.5 seconds
-setInterval(breatheAnimation, totalTime);
+setInterval(breathAnimation, totalTime);
