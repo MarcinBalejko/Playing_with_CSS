@@ -33,14 +33,6 @@ body {
   flex: 1;
 }
 
-/* h1 {
-  font-size: 2.3rem;
-  font-weight: bold;
-  align-self: center;
-  text-align: center;
-  flex: 1;
-} */
-
 .sound-button {
   border-color: white;
   background-color: rgba(211, 112, 46, 0.5);
@@ -53,9 +45,6 @@ body {
 }
 
 .sound {
-  /* align-self: center;
-  justify-self: center;
-  text-align: center; */
   color: white;
   text-decoration: none;
 }
