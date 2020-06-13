@@ -9,15 +9,13 @@
 // SEARCH
 .search {
   flex: 0 0 40%;
-  // ^^^ first 0 cause we don't want it to grow to occupy all of the available space
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   &__input {
     font-family: inherit;
-    font-size: inherit; // it inherits from header (parent element)
+    font-size: inherit;
     color: inherit;
     background-color: var(--color-grey-light-2);
     border: none;
@@ -218,9 +216,7 @@
   }
 
   &__stars {
-    // flex: 1; // it will grow and occupy all the available space
-
-    margin-right: auto; // better solution than the above
+    margin-right: auto;
     display: flex; // erasing the space caused by svg
   }
 
@@ -272,7 +268,7 @@
 .btn-inline {
   border: none;
   color: var(--color-primary);
-  font-size: inherit; // since different sizes all over the page, inheriting from parent
+  font-size: inherit;
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
   display: inline-block;
@@ -291,7 +287,6 @@
 }
 
 @keyframes pulsate {
-  // the button will have a pulse effect
   0% {
     transform: scale(1);
     box-shadow: none;
