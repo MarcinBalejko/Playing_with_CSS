@@ -392,8 +392,12 @@
   padding: 3rem;
   margin-bottom: 3.5rem;
   position: relative;
+  overflow: hidden; // so that the '"' doesn't flow out of the box
 
   &__text {
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative; // always need to set position when setting z-index
   }
 
   &__user {
@@ -440,5 +444,6 @@
     font-size: 20rem;
     color: var(--color-grey-light-2);
     font-family: sans-serif;
+    z-index: 1;
   }
 }
