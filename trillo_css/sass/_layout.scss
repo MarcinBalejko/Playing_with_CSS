@@ -37,10 +37,11 @@
   background-color: #fff;
 
   flex: 1;
-  // ^^^ we want it to occupy the entire remaining space so flex: 1
+  // ^^ we want it to occupy the entire remaining space so flex: 1
 }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
@@ -57,6 +58,5 @@
 }
 
 .user-reviews {
-  background-color: yellowgreen;
   flex: 1;
 }
