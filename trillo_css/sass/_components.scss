@@ -1,17 +1,24 @@
-///////////////////////////////////////////////////////
+////////////////////////////////////////
 // LOGO
 .logo {
   height: 3.25rem;
-  margin: 2rem;
+  margin-left: 2rem;
 }
 
-///////////////////////////////////////////////////////
+////////////////////////////////////////
 // SEARCH
 .search {
   flex: 0 0 40%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
 
   &__input {
     font-family: inherit;
@@ -23,7 +30,7 @@
     border-radius: 100px;
     width: 90%;
     transition: all 0.2s;
-    margin-right: -3.5rem;
+    margin-right: -3.25rem;
 
     &:focus {
       outline: none;
@@ -32,14 +39,12 @@
     }
 
     &::-webkit-input-placeholder {
-      // ^ only works in webkit now ( chrome and safari browsers )
       font-weight: 100;
       color: var(--color-grey-light-4);
     }
   }
 
   &__input:focus + &__button {
-    // ^^^ (+) - selecting sibling of the element (here 'input')
     background-color: var(--color-grey-light-3);
   }
 
@@ -63,7 +68,7 @@
   }
 }
 
-///////////////////////////////////////////////////////
+////////////////////////////////////////
 // USER NAVIGATION
 .user-nav {
   align-self: stretch;
@@ -72,7 +77,6 @@
   align-items: center;
 
   & > * {
-    // ^^^ '>' direct children
     padding: 0 2rem;
     cursor: pointer;
     height: 100%;
@@ -98,7 +102,7 @@
     font-size: 0.8rem;
     height: 1.75rem;
     width: 1.75rem;
-    border-radius: 100px;
+    border-radius: 50%;
     background-color: var(--color-primary);
     color: #fff;
     position: absolute;
@@ -111,26 +115,37 @@
   }
 
   &__user-photo {
-    height: 3.7rem;
+    height: 3.75rem;
     border-radius: 50%;
     margin-right: 1rem;
   }
 }
 
-///////////////////////////////////
+////////////////////////////////////////
 // SIDE NAVIGATION
-
 .side-nav {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
-      // all items except ('not') the last one
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin: 0;
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
 
@@ -142,9 +157,7 @@
     height: 100%;
     width: 3px;
     background-color: var(--color-primary);
-
     transform: scaleY(0);
-    transform-origin: bottom;
     transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
       background-color 0.1s;
   }
@@ -164,48 +177,70 @@
     color: var(--color-grey-light-1);
     text-decoration: none;
     text-transform: uppercase;
-    position: relative; // z-index only works with specified position
-    z-index: 10;
-
     display: block;
     padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 2rem;
-    fill: currentColor; // color of the current element or the parent element
+    fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
-/////////////////////////////////////
+////////////////////////////////////////
 // LEGAL TEXT
 .legal {
   font-size: 1.2rem;
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
-//////////////////////////////////////
+////////////////////////////////////////
 // GALLERY
 .gallery {
   display: flex;
 
   &__photo {
     width: 100%;
-    display: block; // avoiding space under the image
+    display: block;
   }
 }
 
-//////////////////////////////////////
+////////////////////////////////////////
 // HOTEL OVERVIEW
-
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--line);
 
   &__heading {
     font-size: 2.25rem;
@@ -213,11 +248,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
     margin-right: auto;
-    display: flex; // erasing the space caused by svg
+    display: flex;
   }
 
   &__icon-star,
@@ -246,25 +286,36 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 0.5rem;
+    }
   }
 }
 
-/////////////////////////////////////////
+////////////////////////////////////////
 // BUTTON INLINE
-
 .btn-inline {
   border: none;
   color: var(--color-primary);
@@ -279,10 +330,6 @@
   & span {
     margin-left: 3px;
     transition: margin-left 0.2s;
-  }
-
-  &:hover {
-    color: var(--color-grey-dark-1);
   }
 
   &:hover {
@@ -316,15 +363,13 @@
   }
 }
 
-/////////////////////////////////////////
+////////////////////////////////////////
 // PARAGRAPH
 .paragraph:not(:last-of-type) {
-  // ':last-child' would apply to all of the current element's children
-  // ^^^last paragraph should not have any margin at the bottom
   margin-bottom: 2rem;
 }
 
-/////////////////////////////////////////
+////////////////////////////////////////
 // LIST
 .list {
   list-style: none;
@@ -337,37 +382,35 @@
   flex-wrap: wrap;
 
   &__item {
-    // 50% cause we want to have 2 elements side by side, kind of like in grid (KIND OF)...
     flex: 0 0 50%;
     margin-bottom: 0.7rem;
   }
 
-  &__item:before {
+  &__item::before {
     content: "";
-    // ^^^when using :before , we always have to specify the content
     display: inline-block;
-    height: 2rem;
-    width: 2rem;
+    height: 1rem;
+    width: 1rem;
     margin-right: 0.7rem;
 
-    // Older browsers (because masks work only in the newer (webkit) browsers)
-    // background-image: url(../img/chevron-thin-right.svg);
-    // background-size: cover;
+    // Older browsers
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
-    // Newer browsers - masks
-    background-color: var(--color-primary);
-    -webkit-mask-image: url("../img/chevron-thin-right.svg");
-    -webkit-mask-size: cover;
-
-    // for the future when all the browsers start implementing it
-    mask-image: url("../img/chevron-thin-right.svg");
-    -webkit-mask-size: cover;
+    //Newer browsers - masks
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: var(--color-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      background-image: none;
+    }
   }
 }
 
-/////////////////////////////////////////
+////////////////////////////////////////
 // RECOMMEND
-
 .recommend {
   font-size: 1.3rem;
   color: var(--color-grey-dark-3);
@@ -380,24 +423,23 @@
   }
 
   &__friends {
+    display: flex;
   }
 
   &__photo {
     box-sizing: content-box;
-    // ^^^adding border on top of the height and width (default)
-
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
 
-/////////////////////////////////////////////////
+////////////////////////////////////////
 // REVIEWS
 .review {
   background-color: #fff;
@@ -405,17 +447,22 @@
   padding: 3rem;
   margin-bottom: 3.5rem;
   position: relative;
-  overflow: hidden; // so that the '"' doesn't flow out of the box
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     margin-bottom: 2rem;
     z-index: 10;
-    position: relative; // always need to set position when setting z-index
+    position: relative;
   }
 
   &__user {
     display: flex;
-    margin-bottom: 2rem;
+    align-items: center;
   }
 
   &__photo {
@@ -450,8 +497,7 @@
   &::before {
     content: "\201C";
     position: absolute;
-    // ^^ we need to give position relative to the parent as well... (review)
-    top: -2rem;
+    top: -2.75rem;
     left: -1rem;
     line-height: 1;
     font-size: 20rem;
@@ -461,21 +507,25 @@
   }
 }
 
-/////////////////////////////////////////////////
+////////////////////////////////////////
 // CALL TO ACTION
 .cta {
   padding: 3.5rem 0;
   text-align: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
+
   &__book-now {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
   }
 }
 
-/////////////////////////////////////////////////
+////////////////////////////////////////
 // CALL TO ACTION
 .btn {
   font-size: 1.5rem;
@@ -494,7 +544,6 @@
   cursor: pointer;
 
   & > * {
-    // ^^^ select all of the child elements
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -508,7 +557,6 @@
   &__invisible {
     position: absolute;
     padding: 2rem 0;
-
     left: 0;
     top: -100%;
   }
@@ -522,7 +570,7 @@
   }
 
   &:hover &__visible {
-    transform: translateY(100%); // it will translate 100% of its height down
+    transform: translateY(100%);
   }
 
   &:hover &__invisible {
