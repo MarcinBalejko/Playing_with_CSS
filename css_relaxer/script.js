@@ -2,10 +2,6 @@ const container = document.getElementById("container");
 const text = document.querySelector("#text");
 const soundbtn = document.querySelector(".sound-button");
 const soundicon = document.getElementById("sound-icon");
-let audio = new Audio();
-audio.src = "./sound/track.mp3";
-audio.loop = true;
-
 const totalTime = 7500;
 const breatheTime = (totalTime / 5) * 2;
 const holdTime = totalTime / 5;
@@ -28,9 +24,19 @@ function breathAnimation() {
 
 setInterval(breathAnimation, totalTime);
 
-function initAudioPlayer() {
+let audio = new Audio();
+audio.src = "./sound/track.mp3";
+audio.loop = true;
+
+function initAudio() {
+  audio.play();
+}
+
+window.addEventListener("load", initAudio);
+
+function switchAudio() {
   if (soundicon.classList.contains("active")) {
-    soundicon.setAttribute("class", "fas fa-pause fa-2x sound notactive");
+    soundicon.setAttribute("class", "fas fa-pause fa-2x sound inactive");
     audio.play();
   } else {
     soundicon.setAttribute("class", "fas fa-music fa-2x sound active");
@@ -38,4 +44,4 @@ function initAudioPlayer() {
   }
 }
 
-soundbtn.addEventListener("click", initAudioPlayer);
+soundbtn.addEventListener("click", switchAudio);
