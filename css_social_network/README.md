@@ -1,2 +1,2 @@
 #CSS Social Network
-Creating a social network theme with SASS.
+Creating a responsive social network theme with SASS.
