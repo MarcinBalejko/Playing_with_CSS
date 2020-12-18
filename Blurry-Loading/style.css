@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background: url("https://www.musicofsound.co.nz/blog/wp-content/TPuploads/FloatingTorii_DSC05045.jpg")
+    no-repeat center center/cover;
+  height: 100vh;
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  /* width: 100vw; */
+  /* height: 100vh; */
+  z-index: -1;
+  filter: blur(00px);
+}
+
+.loading-text {
+  /* translateX optional */
+  transform: translateX(15px);
+  font-size: 30px;
+  color: #fff;
+}
